@@ -5,27 +5,27 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
 
-        <h2>id : ${message.id} 詳細ページ</h2>
+
+        <h2>id : ${tasks.id} 詳細ページ</h2>
 
 
         <p>
             タスク：
-            <c:out value="${message.content}" />
+            <c:out value="${tasks.content}" />
         </p>
         <p>
             作成日時：
-            <fmt:formatDate value="${message.created_at}"
+            <fmt:formatDate value="${tasks.created_at}"
                 pattern="yyyy-MM-dd HH:mm:ss" />
         </p>
         <p>
             更新日時：
-            <fmt:formatDate value="${message.updated_at}"
+            <fmt:formatDate value="${tasks.updated_at}"
                 pattern="yyyy-MM-dd HH:mm:ss" />
         </p>
 
-        <p>
-            <a href="${pageContext.request.contextPath}/index">一覧に戻る</a>
-        </p>
+        <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
+        <p><a href="${pageContext.request.contextPath}/edit?id=${tasks.id}">このメッセージを編集する</a></p>
 
-    </c:param>
+</c:param>
 </c:import>
